@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Movie</title>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.container { /*Contenedor*/
+			display: grid;
+			grid-template: 10% 1fr / 15% 1fr;
+			grid-template-areas: "head head"
+								 "nav content";
+			grid-gap: 10px;
+			height: 100vh;
+		}
+
+		.head {
+			grid-area: head;
+			display: grid;
+			grid-template: 100%/ 20% 1fr 20%;
+		}
+		.nav {
+			grid-area: nav;
+			display: grid;
+			grid-template: 13% 13% 13% / 1fr;
+			justify-items: center;
+			align-items: start;
+			background: #fe6464;
+			width: 100%;
+		}
+		.content {
+			grid-area: content;
+			display: grid;
+			grid-template: 25px 30% / 1fr 1fr 1fr;
+			/* grid-auto-rows: 25px 1fr; */
+			height: 100%;
+			grid-gap: 10px;
+		}
+
+		.logo {
+			display: flex;
+		}
+
+		.movie img {
+			height: 100%;
+		}
+
+		.logotitle {
+			align-self: center;
+			margin-left: 5px;
+			text-align: center;
+			-webkit-text-stroke: 1px red;
+			font-size: 30px;
+			color: white;
+		}
+
+		.busqueda {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.busqueda input {
+			border-radius: 5px;
+			width: 80%;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.perfil {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.perfil span {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 700;
+			font-size: 12px;
+		}
+
+		.perfilImage {
+			height: 50px;
+			width: 50px;
+			display: flex;
+		}
+
+		.perfilImage img {
+			border-radius: 50%;
+			width: 80%;
+			align-self: center;
+		}
+
+		/* Navegacion */
+		.menuC {
+			display: inline-flex;
+			position: relative;
+		}
+
+		.menuN img {
+			width: 70px;
+		}
+
+		.nav a {
+			text-decoration: none;
+			color: white;
+			display: grid;
+			justify-items: center;
+		}
+
+		.settingN {
+			align-self: end;
+		}
+
+		.hoverNav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+		}
+
+		.menuC:hover .hoverNav {
+			display: inline-flex;
+		}
+
+		.menuC:hover span {
+			color: #c3c3c3;
+		}
+
+		/* Contenido */
+		.content:nth-of-type(3) .item:nth-of-type(1) {
+			grid-column: 1 / span 3;
+		}
+		.content:nth-of-type(3) .item:nth-of-type(5) {
+			grid-column: 1 / span 3;
+		}
+		.content:nth-of-type(3) .item:nth-of-type(9) {
+			grid-column: 1 / span 3;
+		}
+		/* .contenidoImage {
+			background: lightblue;
+		} */
+
+		.title_2 {
+			font-weight: 700;
+		}
+
+		.cartelera {
+			position: relative;
+			display: block;
+		}
+
+		.descriptionMovie {
+			position: absolute;
+			display: none;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			color: white;
+		}
+
+		.cartelera:hover .descriptionMovie {
+			display: inline;
+			top: 35%;
+			background-color: rgba(255, 100, 100, .7);
+		}
+
+		.title3 {
+			font-size: 22px;
+			margin-left: 2%;
+		}
+
+		.title3 + p {
+			margin-left: 2%;
+			margin-right: 2%;
+			text-align: justify;
+			margin-top: 5px;
+			font-size: 12px;
+		}
+
+		.Peli {
+			width: 100%;
+			height: 210px;
+			object-fit: fill;
+		}
+
+	</style>
+</head>
+<body>
+
+<section class="container">
+	<div class="item head">
+		
+		<div class="logo">
+			<figure class="movie">
+				<img src="./image/Popcorn2.jpg" alt="" />
+			</figure>
+			<span class="logotitle">
+				<p>
+					<span>
+						Pili-Platzi
+					</span>
+				</p>
+			</span>
+		</div>
+		<div class="busqueda">
+			<input type="text" placeholder="Busca tu pelicula...">
+		</div>
+		<div class="perfil">
+			<span>Isael Figueroa</span>
+			<figure class="perfilImage">
+				<img src="./image/Perfil.png" alt="" />
+			</figure>
+		</div>
+	</div>
+	<div class="item nav">
+		<a href="" class="menuC">
+			<figure class="menuN">
+				<img src="./image/Icon1.png" alt="" />
+				<img src="./image/Icon1_.png" alt="" class="hoverNav" />
+			</figure>
+			<span>Home</span>
+		</a>
+		<a href="" class="menuC">
+			<figure class="menuN">
+				<img src="./image/Icon2.png" alt="" />
+				<img src="./image/Icon2_.png" alt="" class="hoverNav" />
+			</figure>
+			<span>Trending</span>
+		</a>
+		<a href="" class="menuC">
+			<figure class="menuN">
+				<img src="./image/Icon3.png" alt="" />
+				<img src="./image/Icon3_.png" alt="" class="hoverNav" />
+			</figure>
+			<span>Likes</span>
+		</a>
+		<a href="" class="menuC settingN">
+			<figure class="menuN">
+				<img src="./image/Icon4.png" alt="" />
+				<img src="./image/Icon4_.png" alt="" class="hoverNav" />
+			</figure>
+			<span>Setting</span>
+		</a>
+	</div>
+	<div class="item content">
+		<div class="item title_2">Ahora en el cine</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli1.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Tadeo Jones 2</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli2.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Malefica</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli3.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Como entrenar atu Dragon 2</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item title_2">Aclamadas por la critica</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli4.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Black Panther</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli5.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Avenger Infinity War</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli6.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Blancanieves y la leyenda del cazador</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item title_2">No te debes perder</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli7.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Batman El caballero Oscuro</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli8.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">Super Man</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+		<div class="item contenidoImage">
+			<figure class="cartelera">
+				<img src="./image/Peli9.jpg" alt="" class="Peli" />
+				<div class="descriptionMovie">
+					<span class="title3">La liga de la Justicia</span>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</figure>
+		</div>
+	</div>	
+</section>
+
+</body>
+</html>
